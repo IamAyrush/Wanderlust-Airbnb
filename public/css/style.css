@@ -1,0 +1,295 @@
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+color: #fe424d ;
+font-size: 2rem;
+}
+
+.nav-link{
+    color:#222222 !important;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration:underline;
+}
+.f-info-links{
+    width: 100%;
+}
+.f-info-social{
+    width: 100%;
+    font-size: 1.3rem;
+}
+.f-info-social i{
+    margin-right: 1rem;
+}
+
+.f-info{
+    text-align: center ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 8rem;
+    background-color:blanchedalmond;
+    align-items: space-evenly;
+}
+
+
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 1rem !important;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    overflow: hidden;
+    transition: ease-in-out 0.34s;
+}
+.card img{
+    border-radius: 1rem !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+.card-text{
+    font-weight: 400 !important;
+    margin-left: 15px;
+    margin-top: 1rem;
+    
+}
+.listing-lines{
+    text-decoration: none;
+}
+
+.card-img-top:hover{
+    scale: 1.05;
+}
+.add-btn{
+    background-color: #fe424d  !important;
+    border: none !important;
+}
+
+.show-img{
+    height: 30vh;
+}
+.btns{
+    display: flex;
+}
+.show-card{
+    padding-left:0 ;
+    padding-right: 0;
+}
+#filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+   
+ }
+ .filter{
+     text-align: center;
+     margin-right: 2rem;
+     margin-top: 2rem;
+     margin-bottom: 2rem;
+     opacity: 0.7;
+ }
+ .filter:hover{
+     opacity: 1;
+     cursor: pointer;
+ }
+ .filter p{
+     font-size: 0.8rem;
+ }
+ .option{
+     display: flex;
+     gap: 1rem;
+     margin-left: 3rem;
+ }
+ .tax-info{
+     display: none;
+ }
+ .tax-switch{
+     border: 1px solid gray;
+     border-radius: 1rem;
+     height: 3rem;
+     padding: 1rem;
+     display: flex;
+     align-items: center;
+ }
+
+ .filters-slidshow{
+     display: flex;
+     flex-direction: row;
+     overflow: scroll;
+     overflow-y: hidden;
+     width: 63%;
+     height: 120px;
+     border-radius: 5rem;
+ }
+ .filters-slidshow::-webkit-scrollbar{
+     background-color:transparent;
+ }
+ .price-filter{
+     border: 1px solid gray;
+     border-radius: 1rem;
+     height: 3rem;
+     padding: 1rem;
+     display: flex;
+     align-items: center;
+     cursor:pointer;
+     gap: 10px;
+ }
+
+ button{
+    color: none;
+    border: none;
+    background: none;
+}
+.logo{
+    color: #fe424d;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-left: -12px;
+    margin-right: 20px;
+    
+    
+  }
+  .explore{
+    font-size: 1.1rem !important;
+  }
+  .btn-search{
+    background-color: #fe424d !important;
+    color: white !important;
+    display: flex !important;
+
+    border-radius: 25px !important;
+    padding: 5px 1rem 5px 1rem !important;
+  }
+  .btn-search:hover{
+    background-color: #fe424d;
+    color: white;
+  }
+  .btn-search i{
+    margin: 5px;
+  }
+  .serach-input{
+    
+    border-radius: 25px !important;
+    padding: 5px 2rem 5px 2rem !important;
+
+  }
+  .container-fluid{
+    background-color: white;
+  }
+
+  .filter-option{
+    color: #fe424d !important;
+    font-weight: bold !important;
+    opacity: 1;
+    
+
+  }
+  .home-page{
+    position: relative;
+}
+.home-img{
+    position: fixed;
+    width: 110%;
+    height: 100%;
+    margin-left: -10%;
+    overflow: hidden;
+    filter:brightness(70%);   
+}
+.content{
+    padding: 5rem;
+    position:absolute;
+    top: 5rem;
+}
+
+.heading1{
+    color: #fe424d;
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 10px;
+    font-weight: bold;  
+}
+.heading2{
+    color: white;
+    font-size: 3.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;  
+}
+.btn a{
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: aliceblue;
+    text-decoration: unset;
+}
+
+ @media (max-width:1200px) {
+     .filters-slidshow{
+         width: 100%;
+     }
+     .option{
+         margin-left: 0rem;
+     }
+ 
+     
+ }
+ @media (max-width:1000px) {
+    .home-img{
+        position:relative;
+        width: 100%;
+        height: 100%;
+        margin-left: 0%;
+    
+    }
+     .filters-slidshow{
+         width: 100%;
+     }
+     .option{
+         margin-left: 0rem;
+     }
+ 
+     
+ }
+ @media (max-width:700px) {
+    .content{
+        padding: 2rem;
+        top:0;
+    }
+    .heading1{
+        font-size: 0.6rem;
+        letter-spacing: 7px;
+    }
+    .heading2{
+        font-size: 2.3rem;
+    }
+    .btn a{
+        font-size: 1rem;
+    }
+    
+}
