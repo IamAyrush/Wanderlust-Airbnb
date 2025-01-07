@@ -18,26 +18,36 @@
 
 
        <div class="option ">
-        <div class=" price-filter  mb-1">
-            <i class="fa-solid fa-arrow-up-short-wide"></i>
-            filter Price
-    
-           </div>
-    
-    
-            <div class="tax-switch ">
-                <div class="form-check-reverse form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Display total taxes</label>
-                  </div>
+
+        <!-- for filtering price btn -->
+        <div class=" price-filter mb-1 dropdown-center">
+            <div class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-arrow-up-short-wide"></i> &nbsp;filter Price</div>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">100-1000 INR</a></li>
+              <li><a class="dropdown-item" href="#">1000-2000 INR</a></li>
+              <li><a class="dropdown-item" href="#">2000-5000 INR</a></li>
+              <li><a class="dropdown-item" href="#">5000-10000 INR</a></li>
+              <li><a class="dropdown-item" href="#">10000-20000 INR</a></li>
+              <li><a class="dropdown-item" href="#">20000+ INR</a></li>
+            </ul>
+            
+        </div>
+         
+        <!-- for displaying tax over listings prices -->
+        <div class="tax-switch ">
+           <div class="form-check-reverse form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Display total taxes</label>
             </div>
+        </div>
+
        </div>
     </div>
 
     
 
 
-    <div class="row  row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <div class="row row-cols-xxl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
         <% for (let listing of allListing) { %>
             <a href="/listing/<%= listing._id %>" class="listing-lines">
                 <div class="listing-card card col" >
@@ -46,7 +56,7 @@
                       <p class="card-text">
                         <b><%= listing.title %></b>
                           <br>
-                          &#8377; <%= listing.price.toLocaleString("en-IN") %>/night
+                          &#8377; <%= listing.price.toLocaleString("en-IN") %> night
                           &nbsp; &nbsp; <i class="tax-info">+18% GST</i>
                       </p>
             

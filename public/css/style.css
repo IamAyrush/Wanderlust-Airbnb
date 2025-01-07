@@ -7,6 +7,9 @@ body{
 
 .container{
     flex: 1;
+    
+    
+    
 }
 
 .navbar{
@@ -64,7 +67,7 @@ font-size: 2rem;
     width: 100% !important;
     object-fit: cover !important;
     overflow: hidden;
-    transition: ease-in-out 0.34s;
+    transition: ease-in-out 0.3s;
 }
 .card img{
     border-radius: 1rem !important;
@@ -84,7 +87,7 @@ font-size: 2rem;
 }
 
 .card-img-top:hover{
-    scale: 1.05;
+    filter: brightness(70%);
 }
 .add-btn{
     background-color: #fe424d  !important;
@@ -200,6 +203,9 @@ font-size: 2rem;
     padding: 5px 2rem 5px 2rem !important;
 
   }
+
+  
+ 
   .container-fluid{
     background-color: white;
   }
@@ -249,6 +255,8 @@ font-size: 2rem;
     text-decoration: unset;
 }
 
+
+
  @media (max-width:1200px) {
      .filters-slidshow{
          width: 100%;
@@ -256,6 +264,7 @@ font-size: 2rem;
      .option{
          margin-left: 0rem;
      }
+     
  
      
  }
@@ -273,6 +282,9 @@ font-size: 2rem;
      .option{
          margin-left: 0rem;
      }
+     .explore{
+        display: none !important;
+    }
  
      
  }
