@@ -6,7 +6,7 @@ body{
 }
 
 .container{
-    flex: 1;
+    flex: 1 !important;
 }
 
 .navbar{
@@ -125,7 +125,7 @@ font-size: 2rem;
  .option{
      display: flex;
      gap: 1rem;
-     margin-left: 3rem;
+     margin: 1rem;
  }
  .tax-info{
      display: none;
