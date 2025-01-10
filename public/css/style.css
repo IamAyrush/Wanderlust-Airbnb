@@ -24,34 +24,9 @@ font-size: 2rem;
     color:#222222 !important;
 }
 
-.f-info-links a{
-    text-decoration: none;
-    color: #222222;
-}
 
-.f-info-links a:hover{
-    text-decoration:underline;
-}
-.f-info-links{
-    width: 100%;
-}
-.f-info-social{
-    width: 100%;
-    font-size: 1.3rem;
-}
-.f-info-social i{
-    margin-right: 1rem;
-}
 
-.f-info{
-    text-align: center ;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 8rem;
-    background-color:blanchedalmond;
-    align-items: space-evenly;
-}
+
 
 
 
