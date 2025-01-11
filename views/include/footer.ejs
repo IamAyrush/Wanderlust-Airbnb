@@ -10,7 +10,33 @@
 				<a href="#" class="fa-brands fa-linkedin"></a>
                 </div>
                 <div class="footer-contactus">
-                    <button>Contact us</button>
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Contact us</button>
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h1 class="modal-title fs-5" id="exampleModalLabel">Contact Us</h1>
+							  <div type="button" class="btn-close" style="background-color: transparent; color: black;" data-bs-dismiss="modal" aria-label="Close"></div>
+							</div>
+							<div class="modal-body">
+							  <form action="https://formsubmit.co/heyiamayrush@gmail.com" method="POST">
+								<div class="mb-3">
+								  <label for="recipient-name" class="col-form-label" style="justify-content: start; display: flex;">Email :</label>
+								  <input type="text" class="form-control" id="recipient-name" required>
+								</div>
+								<div class="mb-3">
+								  <label for="message-text" class="col-form-label" style="justify-content: start; display: flex;">Message :</label>
+								  <textarea class="form-control" id="message-text" required></textarea>
+								</div>
+								<div class="modal-footer">
+									<button type="button" style="background-color: black; padding: 7px; font-size: 1rem;" data-bs-dismiss="modal">Close</button>
+									<button type="submit" style="padding: 7px; font-size: 1rem;" >Send message</button>
+								</div>
+							  </form>
+							</div>
+						  </div>
+						</div>
+					  </div>
                 </div>
 			</div>
 			<div class="footer-links">
