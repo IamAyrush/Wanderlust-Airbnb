@@ -25,6 +25,16 @@ font-size: 2rem;
 }
 
 
+.loading-spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 1rem;
+    width: 100%;  
+}
 
 
 

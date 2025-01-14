@@ -30,4 +30,10 @@ let  taxSwitch = document.getElementById('flexSwitchCheckDefault')
              }
 })
 
-//----------------------------------        
+//----------------------------------  
+
+window.onload = function() {
+      
+  document.getElementById('loader').style.display = 'none'; // Hide loader after page load
+
+}
