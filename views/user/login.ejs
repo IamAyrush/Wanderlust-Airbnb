@@ -5,28 +5,22 @@
 <div class="row userRegister">
     <div class="col-12 d-flex flex-column justify-content-center align-items-center">
         <div class="d-flex flex-row justify-content-center align-items-end  gap-1">
-          <h1><b>Login</b>  <h4 style="padding: 2px;">on <span class="user-logo">WanderLust</span></h4></h1>  
+            <h1><b>Login</b> <small style="padding: 2px;">on <span class="user-logo">WanderLust</span></small></h1>  
         </div>
         <hr class="line">
-        <form action="/login" method="post" class="needs-validation col-12" novalidate>
+        <form action="/login" class="col-12"  method="post">
             <br>
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter Username" class="form-control" required>
-                <div class="valid-feedback">
-                    Looks Good !
-                </div>
             </div>
 
             <div class="mb-3">
                 <label for="password" class="form-label">password</label>
                 <input type="password" id="password" name="password" placeholder="Enter Username" class="form-control" required>
-                <div class="valid-feedback">
-                    Looks Good !
-                </div>
             </div>
 
-            <button class="btn btn-dark col-12 ">Login</button>
+            <button class="btn btn-dark col-12 " type="submit">Login</button>
             <br><br>
         </form>
         

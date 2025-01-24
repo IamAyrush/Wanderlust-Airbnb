@@ -6,21 +6,15 @@
     <br>
     <h2>Create a New Listing</h2>
     <br>
-    <form method="post" action="/listing" class="needs-validation" novalidate enctype="multipart/form-data">
+    <form method="post" action="/listing"  enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" name="listing[title]" placeholder="Enter title" class="form-control" required>
-            <div class="valid-feedback">
-                Looks Good !
-            </div>
         </div>
         
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <textarea name="listing[description]" placeholder="Enter description" id="" cols="30" rows="10" class="form-control" required></textarea>
-            <div class="invalid-feedback">
-                Please enter a short description !
-             </div>
         </div>
         
 
@@ -33,26 +27,17 @@
         <div class="mb-3 col-md-4">
             <label for="price" class="form-label">Price</label>
         <input  name="listing[price]" placeholder="1,200" class="form-control" required>
-        <div class="invalid-feedback">
-           Please enter a valid Price !
-        </div>
         </div>
         
         <div class="mb-3 col-md-8">
             <label for="country" class="form-label">Country</label>
             <input type="text" name="listing[country]" placeholder="India" class="form-control" required>
-            <div class="invalid-feedback">
-                Please enter a country name !
-             </div>
         </div>
         </div>
 
         <div class="mb-3">
             <label for="location" class="form-label">Location</label>
         <input type="text" name="listing[location]" placeholder="Enter location" class="form-control" required>
-        <div class="invalid-feedback">
-            Please enter a Location !
-         </div>
         </div>
 
         <div class="mb-3 ">

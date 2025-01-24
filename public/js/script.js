@@ -1,5 +1,16 @@
+window.onload = function() {
+      
+  document.getElementById('loader').style.display = 'none'; // Hide loader after page load
+
+}
+
+
+  //----------------------------------  
+
+
+
 (() => {
-    'use strict'
+    'use strict';
   
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation')
@@ -17,7 +28,11 @@
     })
   })()
 
+
+
 // ----------------------------------
+
+
 let  taxSwitch = document.getElementById('flexSwitchCheckDefault')
         taxSwitch.addEventListener("click",()=>{
              let taxInfo = document.getElementsByClassName('tax-info');
@@ -30,10 +45,4 @@ let  taxSwitch = document.getElementById('flexSwitchCheckDefault')
              }
 })
 
-//----------------------------------  
 
-window.onload = function() {
-      
-  document.getElementById('loader').style.display = 'none'; // Hide loader after page load
-
-}
