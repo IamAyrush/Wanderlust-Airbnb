@@ -6,7 +6,7 @@
     <br>
     <h2>Create a New Listing</h2>
     <br>
-    <form method="post" action="/listing"  enctype="multipart/form-data">
+    <form method="post" action="/listing"  enctype="multipart/form-data" id="Form">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" name="listing[title]" placeholder="Enter title" class="form-control" required>
@@ -19,14 +19,15 @@
         
 
         <div class="mb-3">
-            <label for="img" class="form-label"> Uplode Image</label>
-        <input type="file" name="listing[img]"  class="form-control" required>
+            <label for="imgInput" class="form-label">Upload Images</label>
+            <input type="file" name="listing[img]" class="form-control" required>
         </div>
+        
        
         <div class="row">
         <div class="mb-3 col-md-4">
             <label for="price" class="form-label">Price</label>
-        <input  name="listing[price]" placeholder="1,200" class="form-control" required>
+        <input type="number"  name="listing[price]" placeholder="1,200" class="form-control" required>
         </div>
         
         <div class="mb-3 col-md-8">
@@ -64,7 +65,7 @@
         </div>
         
 
-        <button class="btn btn-dark add-btn">ADD</button>
+        <button type="submit" class="btn btn-dark add-btn" id="submitBtn">ADD</button>
 
         <br><br><br>
     </form>

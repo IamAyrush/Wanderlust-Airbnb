@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema;
+const cloudinary =require('cloudinary').v2;
 const Review = require('./review.js');
 const { string, required } = require('joi');
 const listingSchema = new Schema({
@@ -9,10 +10,12 @@ const listingSchema = new Schema({
         required : true,
     },
     description:String,
-    img:{
-       url:String,
-       filename:String,
-    },
+    img: [
+        {
+            url: String,  // Directly storing URL string
+            filename: String
+        }
+    ],
     price:Number,
     location:String,
     country:String,
@@ -34,8 +37,18 @@ const listingSchema = new Schema({
 });
 
 listingSchema.post("findOneAndDelete",async (listing)=>{
-    if(listing){
-    await Review.deleteMany({_id:{$in:listing.reviews}})
+    if (listing) {
+        // Delete associated reviews
+        await Review.deleteMany({ _id: { $in: listing.reviews } });
+
+        // Delete associated images from Cloudinary
+        if (listing.img && listing.img.length > 0) {
+            for (let image of listing.img) {
+                if (image.filename) {
+                    await cloudinary.uploader.destroy(image.filename);
+                }
+            }
+        }
     }
 })
 

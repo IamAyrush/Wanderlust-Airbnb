@@ -32,7 +32,7 @@ router.get("/new",isLoggedIn,listingController.newForm)
 router.route('/')
 .get(wrapAsync(listingController.index))
 
-.post(isLoggedIn,upload.single('listing[img]'),wrapAsync(listingController.createListing),validateListing)
+.post(isLoggedIn,upload.single("listing[img]"),wrapAsync(listingController.createListing),validateListing)
 
 for(let i=0;i<=10;i++){
     router.get(`/${category[i]}`,async (req,res)=>{
@@ -53,6 +53,12 @@ for(let i=0;i<=10;i++){
 // this is for search results.
 router.post('/result',  wrapAsync(listingController.result));
 
+router.post(
+    "/:id/upload",
+    isLoggedIn,
+    upload.single('listing[img]'),
+    wrapAsync(listingController.uploadImage)
+);
 
 router.route("/:id")
 .get(wrapAsync(listingController.showListing))
@@ -60,6 +66,7 @@ router.route("/:id")
 .put(isLoggedIn,isOwner,upload.single('listing[img]'),validateListing,wrapAsync(listingController.updateListing))
 
 .delete(isLoggedIn,isOwner,wrapAsync(listingController.deleteListing))
+
 
 router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(listingController.editListing))
 

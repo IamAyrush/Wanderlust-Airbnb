@@ -50,7 +50,11 @@
         <% for (let listing of allListing) { %>
             <a href="/listing/<%= listing._id %>" class="listing-lines">
                 <div class="listing-card card col" >
-                    <img src="<%= listing.img.url %>" class="card-img-top" alt="...">
+                  <% if (listing.img && listing.img.length > 0) { %>
+                    <img src="<%= listing.img[0].url %>" class="card-img-top" alt="Listing Image">
+                  <% } else { %>
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/022/059/000/small_2x/no-image-available-icon-vector.jpg" class="card-img-top" alt="No Image Available">
+                  <% } %>
                     <div class="card-body">
                       <p class="card-text">
                         <b><%= listing.title %></b>

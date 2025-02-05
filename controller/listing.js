@@ -1,11 +1,26 @@
-const Listing= require("../models/listing")
+const Listing = require('../models/listing');
 
 
-module.exports.index=async (req,res)=>{
-    const categories =[["Trending","fa-solid fa-fire"],["Rooms",'fa-solid fa-bed'],["Beach",'fa-solid fa-water'],["Castles","fa-brands fa-fort-awesome"],["Amezing_Pools","fa-solid fa-person-swimming"],["Mountain","fa-solid fa-mountain"],["Arctic","fa-regular fa-snowflake"],["Farms","fa-solid fa-cow"],["Camping","fa-solid fa-campground"],["Iconic_cities","fa-solid fa-mountain-city"]]
-    const allListing= await Listing.find({});
-    res.render("listing/index.ejs",{allListing,categories});
-}
+module.exports.index = async (req, res) => {
+    const categories = [
+        ["Trending", "fa-solid fa-fire"],
+        ["Rooms", "fa-solid fa-bed"],
+        ["Beach", "fa-solid fa-water"],
+        ["Castles", "fa-brands fa-fort-awesome"],
+        ["Amezing_Pools", "fa-solid fa-person-swimming"],
+        ["Mountain", "fa-solid fa-mountain"],
+        ["Arctic", "fa-regular fa-snowflake"],
+        ["Farms", "fa-solid fa-cow"],
+        ["Camping", "fa-solid fa-campground"],
+        ["Iconic_cities", "fa-solid fa-mountain-city"]
+    ];
+
+    // Fetch listings with owner info, NO NEED TO POPULATE "img"
+    const allListing = await Listing.find({}).populate("owner");
+
+    res.render("listing/index.ejs", { allListing, categories });
+};
+
 
 module.exports.result = async(req,res)=>{
     const {q} = req.body;
@@ -36,15 +51,28 @@ module.exports.newForm =(req,res)=>{
     res.render("listing/new.ejs")
 }
 
-module.exports.showListing =async (req,res)=>{
-    let {id} =req.params;
-    const listing= await Listing.findById(id).populate({path:"reviews",populate:{path:"author"}}).populate("owner");
-    if(!listing){
-        req.flash("error"," This Listing does not exist!!")
-        res.redirect("/listing")
+module.exports.showListing = async (req, res) => {
+    let { id } = req.params;
+
+    // Fetch listing with owner and reviews (NO need to populate img)
+    const listing = await Listing.findById(id)
+        .populate({ path: "reviews", populate: { path: "author" } }) // Populating reviews and their authors
+        .populate("owner"); // Populating owner of the listing
+
+    // If listing doesn't exist, show error
+    if (!listing) {
+        req.flash("error", "This Listing does not exist!");
+        return res.redirect("/listing");
     }
-    res.render("listing/show.ejs",{listing})
-}
+
+    // Ensure listing.img exists as an array
+    if (!listing.img || listing.img.length === 0) {
+        listing.img = [{ url: "https://static.vecteezy.com/system/resources/thumbnails/022/059/000/small_2x/no-image-available-icon-vector.jpg" }];
+    }
+
+    res.render("listing/show.ejs", { listing });
+};
+
 
 
 module.exports.editListing =async (req,res)=>{
@@ -54,25 +82,76 @@ module.exports.editListing =async (req,res)=>{
         req.flash("error","This Listing does not exist!!")
         res.redirect("/listing")
     }
-    let originalImgUrl =listing.img.url;
-    originalImgUrl= originalImgUrl.replace("/upload","/upload/h_300,w_250")
-    res.render("listing/edit.ejs",{listing, originalImgUrl})
+    res.render("listing/edit.ejs",{listing})
 
 }
 
-module.exports.createListing=async (req,res,next)=>{
-    
-    let url =req.file.path;
-    let filename=req.file.filename;
+module.exports.createListing = async (req, res, next) => {
+    try {
+        if (!req.file) {
+            req.flash("error", "Please upload an image!");
+            return res.redirect("/listing/new");
+        }
 
-   const newListing = new Listing(req.body.listing) ;
-   newListing.owner =req.user._id;
-   newListing.img ={url,filename}
-   await newListing.save();
-   req.flash("success","New Listing Created")
-   res.redirect("/listing");
-    
-}
+        // Create a new `ListingImg` document for the image
+        const image = {
+            url: req.file.path,
+            filename: req.file.filename
+        };
+
+        // Create a new `Listing` and store images directly in `img`
+        const newListing = new Listing(req.body.listing);
+        newListing.owner = req.user._id;
+        newListing.img.push(image); // Store as an array for future multiple uploads
+
+        await newListing.save();
+        req.flash("success", "New Listing Created");
+        res.redirect("/listing");
+    } catch (error) {
+        next(error);
+    }
+};
+
+
+module.exports.uploadImage = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const listing = await Listing.findById(id);
+
+        if (!listing) {
+            req.flash("error", "Listing not found!");
+            return res.redirect("/listing");
+        }
+        
+        if (!req.file) {
+            req.flash("error", "No image uploaded!");
+            return res.redirect(`/listing/${id}`);
+        }
+
+        // Extract image details
+        const { path: url, filename } = req.file;
+        
+        // Create an image object
+        const newImage = {
+              url,
+              filename 
+        };
+
+        // Add the new image to the listing
+        listing.img.push(newImage);
+        await listing.save();
+
+        req.flash("success", "Image uploaded successfully!");
+        res.redirect(`/listing/${req.params.id}`);
+    } catch (error) {
+        req.flash("error", "Upload failed. Try again later!");
+        console.log(error);
+        
+        res.redirect(`/listing/${req.params.id}`);
+    }
+};
+
+
 
 module.exports.updateListing =async (req,res)=>{
     let {id} =req.params;
@@ -87,6 +166,8 @@ module.exports.updateListing =async (req,res)=>{
     req.flash("success","Updated successfuly!!")
     res.redirect(`/listing/${id}`)
 }
+
+
 module.exports.deleteListing =async (req,res)=>{
     let {id} =req.params;
     await Listing.findByIdAndDelete(id);

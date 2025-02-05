@@ -48,6 +48,12 @@ font-size: 2rem;
     overflow: hidden;
     border-radius: 1rem !important;
 }
+
+.cardlisting-card{
+    border-radius: 1rem !important;
+    overflow: hidden;
+    padding: 0px !important;
+}
 .card-img-top{
     border-radius: 1rem !important;
     width: 100% !important;
@@ -59,6 +65,82 @@ font-size: 2rem;
 }
 .card img{
     border-radius: 1rem !important;
+}
+
+
+
+.upload-btn {
+    position: absolute;
+    margin:1rem;
+    margin-top: -4rem;
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    padding: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+}
+.show-all-imgs{
+    position: absolute;
+    cursor: pointer;
+    margin: 1rem;
+    width: 12rem !important;
+    margin-top: 3rem !important;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    padding: 0.7rem;
+    display:flex;
+    align-items: center;
+    font-size: 1rem;
+}
+.show-all{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+
+
+.card-img-main{
+    width:33rem  !important;
+    height: 20rem !important;
+    object-fit: cover !important;
+    overflow: hidden;
+}
+.card-img-others{
+    display: flex;
+    flex-direction:column;
+    gap: 0.4rem;
+    height: 20rem !important;
+    overflow: hidden;
+   
+}
+.show-card{
+    padding:0rem !important;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.show-card-img{
+    width: 14.6rem;
+    height: 10rem;
+    object-fit: cover !important;
+    overflow: hidden;
+
+}
+.img-hover:hover{
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
+.owner{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 1rem;
+    object-fit: fill;
 }
 
 .card-body{
@@ -76,7 +158,7 @@ font-size: 2rem;
 }
 
 .card-img-top:hover{
-    filter: brightness(70%);
+    filter: brightness(90%);
 }
 .add-btn{
     background-color: #fe424d  !important;
@@ -89,10 +171,7 @@ font-size: 2rem;
 .btns{
     display: flex;
 }
-.show-card{
-    padding-left:0 ;
-    padding-right: 0;
-}
+
 #filters{
     display: flex;
     flex-wrap: wrap;
@@ -289,6 +368,12 @@ font-size: 2rem;
     }
     .btn a{
         font-size: 1rem;
+    }
+    .show-card{
+        flex-direction: column;
+    }
+    .card-img-others{
+        flex-direction: row;
     }
     
 }
