@@ -14,7 +14,7 @@
             <% if (currUser && currUser._id.equals(listing.owner._id)){%>  
 
             <form method="post" action="/listing/<%= listing.id %>/upload" enctype="multipart/form-data">
-                    <div class="file-upload-container">
+                    <div class="file-upload-container col-12">
                         <!-- Hidden file input -->
                         <input type="file" name="listing[img]" class="upload" id="fileInput" style="display: none;" accept="image/*">
                         
@@ -22,6 +22,11 @@
                         <label for="fileInput" class="upload-btn" id="uploadLabel">
                             <i class="fa-solid fa-camera-retro"></i>  &nbsp; &nbsp;   <b>add more</b>
                         </label>
+                        <div class="show-all-imgs offset-md-1">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <i class="fa-solid fa-dice-d20"></i> &nbsp;  <b>Show all Images</b>
+                            </button>
+                        </div>
                         <!-- Loading Indicator -->
                        <div id="loading" class="upload-btn" style="display: none;">
                         <i class="fa-solid fa-spinner fa-spin"></i> Uploading...
@@ -50,11 +55,7 @@
         
     </div>
 
-    <div class="show-all-imgs offset-md-1">
-        <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <i class="fa-solid fa-eye"></i>  &nbsp; &nbsp;  <b>Show all Images</b>
-        </button>
-    </div>
+    
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
           <div class="modal-content">
