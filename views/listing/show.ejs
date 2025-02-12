@@ -1,13 +1,13 @@
 <% layout("/layout/boilerplate") %>
 
 <div class="row mt-3 ">
-    <div class="col-8 offset-md-1 offset-sm-0">
+    <div class="col-md-10 col-12 offset-md-1 offset-sm-0">
     <h4><i class="fa-solid fa-dice-d6"></i> &nbsp; <b><%= listing.title %></b></h4>
     </div>
 
     <!-- ---------------------------This section is for Images showing -------------------------------- -->
     
-    <div class="cardlisting-card col-md-9 offset-md-1 show-card">
+    <div class="cardlisting-card col-lg-9  col-md-10 offset-md-1 show-card">
         <div>
             <img src="<%= listing.img.length > 0 ? listing.img[0].url : 'https://static.vecteezy.com/system/resources/thumbnails/022/059/000/small_2x/no-image-available-icon-vector.jpg' %>"
                  class="card-img-main img-hover" alt="Main Image" loading="lazy">
@@ -22,11 +22,6 @@
                         <label for="fileInput" class="upload-btn" id="uploadLabel">
                             <i class="fa-solid fa-camera-retro"></i>  &nbsp; &nbsp;   <b>add more</b>
                         </label>
-                        <div class="show-all-imgs offset-md-1">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                <i class="fa-solid fa-dice-d20"></i> &nbsp;  <b>Show all Images</b>
-                            </button>
-                        </div>
                         <!-- Loading Indicator -->
                        <div id="loading" class="upload-btn" style="display: none;">
                         <i class="fa-solid fa-spinner fa-spin"></i> Uploading...
@@ -50,7 +45,10 @@
                     <img src="<%= listing.img[i] ? listing.img[i].url : 'https://static.vecteezy.com/system/resources/thumbnails/022/059/000/small_2x/no-image-available-icon-vector.jpg' %>"
                          class="show-card-img img-hover" alt="Image <%= i+1 %>" loading="lazy">
                 <% } %>
+        
             </div>
+
+            
         </div>
         
     </div>
@@ -76,6 +74,12 @@
           </div>
         </div>
       </div>
+
+      <div class="show-all-imgs offset-md-1">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <i class="fa-solid fa-dice-d20"></i> &nbsp;  <b>Show all Images</b>
+        </button>
+    </div>
    <!-- -----------------------------------------End of Img section----------------------------------------  -->
 
     <!-- card Body -->

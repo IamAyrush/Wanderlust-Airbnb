@@ -81,13 +81,12 @@ font-size: 2rem;
     align-items: center;
     font-size: 1rem;
 }
-.show-all-imgs{
-    position:absolute;
+.show-all-imgs{ 
     cursor: pointer;
-    margin: 1rem;
+    height: 3rem;
     width: 11.5rem !important;
-    margin-left: 9.5rem !important;
-    margin-top: -4rem !important;
+    /* margin-left: 9.5rem !important; */
+    margin-top: 1rem !important;
     background-color: aliceblue;
     border-radius: 0.5rem;
     padding: 0.7rem;
@@ -102,10 +101,8 @@ font-size: 2rem;
 }
 
 
-
-
 .card-img-main{
-    width:33rem  !important;
+    width: 100%;
     height: 20rem !important;
     object-fit: cover !important;
     overflow: hidden;
@@ -114,6 +111,7 @@ font-size: 2rem;
     display: flex;
     flex-direction:column;
     gap: 0.4rem;
+    object-fit: cover !important;
     height: 20rem !important;
     overflow: hidden;
    
@@ -122,15 +120,13 @@ font-size: 2rem;
     padding:0rem !important;
     display: flex;
     flex-direction:row;
-    justify-content: center;
     gap: 0.4rem;
 }
 .show-card-img{
-    width: 14.6rem;
+    min-width: 15rem;
     height: 10rem;
     object-fit: cover !important;
     overflow: hidden;
-
 }
 .img-hover:hover{
     filter: brightness(90%);
@@ -330,10 +326,7 @@ font-size: 2rem;
      }
      .option{
          margin-left: 0rem;
-     }
-     
- 
-     
+     }    
  }
  @media (max-width:1000px) {
     .home-img{
@@ -375,6 +368,12 @@ font-size: 2rem;
     }
     .card-img-others{
         flex-direction: row;
+    }
+
+    .show-card img{
+        width: 100%;
+        height: auto;
+        object-fit: cover; 
     }
     
 }

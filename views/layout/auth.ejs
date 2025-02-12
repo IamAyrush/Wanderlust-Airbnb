@@ -32,6 +32,17 @@
         // Hide loader after page load
             document.getElementById('loader').style.display = 'none';
         }
+
+        
+        document.addEventListener("DOMContentLoaded", function () {
+       const form = document.getElementById("Form");
+       const submitBtn = document.getElementById("submitBtn");
+
+       form.addEventListener("submit", function () {
+           submitBtn.disabled = true; // Disable the button
+           submitBtn.innerText = "Uploading..."; // Change text to "Uploading..."
+       });
+       });
     </script>
     
     
