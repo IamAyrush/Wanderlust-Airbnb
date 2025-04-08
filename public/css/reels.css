@@ -1,0 +1,204 @@
+/* ==============================
+   🔧 General Layout
+============================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black !important;
+}
+
+/* ==============================
+   🖼️ Reel Container
+============================== */
+#reel-container {
+    height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reel-container {
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reel-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==============================
+   🎥 Individual Reel
+============================== */
+.reel {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.reel img {
+    width: 350px;
+    height: 88vh;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* ==============================
+   ❤️ Controls (Like / Share)
+============================== */
+.controls {
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-like,
+.btn-share {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ==============================
+   👤 Reel Info (Owner & Desc)
+============================== */
+.reel-info {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+    color: white;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.owner-info {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.reel-info .owner {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+/* ==============================
+   📱 Responsive (Mobile)
+============================== */
+@media screen and (max-width: 768px) {
+    .reel {
+        padding: 0;
+        margin: 0;
+    }
+
+    .reel img {
+        width: 100vw;
+        height: 95vh;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    .controls {
+        bottom: 4rem !important;
+        right: 10px;
+    }
+
+    .reel-info {
+        bottom: 3rem !important;
+        left: 0.75rem;
+        padding: 0 0.5rem;
+        max-width: 90%;
+    }
+}
+
+/* ==============================
+   👤 Owner Image (Top-Level)
+============================== */
+.owner {
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+    border-radius: 1rem;
+    object-fit: fill;
+}
+
+/* ==============================
+   🖼️ profile container
+============================== */
+
+.custom-profile-menu {
+    position: relative;
+}
+
+.profile-btn {
+    background: none;
+    border: none;
+    color: #fe424d;
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    padding: 0.5rem 0;
+    min-width: 120px;
+    font-size: 14px;
+}
+
+.profile-dropdown a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.profile-dropdown a:hover {
+    background-color: #333;
+}
+
+/* Optional: Close on outside click */
+body.clicked-outside .profile-dropdown {
+    display: none !important;
+}
+

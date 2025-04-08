@@ -1,40 +1,101 @@
-
-
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand " href="/listing" ><i class="fa-regular fa-compass"></a></i><span class="logo">WanderLust</span>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse pl-2 mt-3 " id="navbarNavAltMarkup">
-        <div class="navbar-nav mb-3">
-          <a class="nav-link explore" href="/listing"><b>Explore</b></a>
-        </div>
-        <div class="navbar-nav ms-auto mb-3 ">
-          <form class="d-flex" role="search" method="post" action="/listing/result">
-            <input class="form-control me-2 serach-input" type="search" placeholder="Search location" name="q"  aria-label="Search">
-            <button class="btn btn-search " type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-          </form>
-        </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listing"><i class="fa-regular fa-compass"></i></a>
+    <span class="logo">WanderLust</span>
 
-        
-  
-        <div class="navbar-nav ms-auto ">
-          <a class="nav-link" href="/listing/new">Airbnb your home</a>
-          <% if(!currUser) { %>
-          <a class="nav-link "  href="/signup"><b>Sign Up</b></a>
-          <a class="nav-link" href="/login"><b>Login</b></a>
-          <% } %>
-          <% if(currUser) { %>
-          <a class="nav-link" href="/logout"><b>LogOut</b></a>
-          <% } %>
-       
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse pl-2 mt-3" id="navbarNavAltMarkup">
+      <!-- Explore Link -->
+      <div class="navbar-nav mb-3">
+        <a class="nav-link explore" href="/listing"><b>Explore</b></a>
+      </div>
+
+      <!-- Search Form -->
+      <div class="navbar-nav ms-auto mb-3">
+        <form class="d-flex" role="search" method="post" action="/listing/result">
+          <input class="form-control me-2 search-input" type="search" placeholder="Search location" name="q" aria-label="Search">
+          <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        </form>
+      </div>
+
+      <!-- Combined Vibes and Profile on small screens -->
+      <div class="navbar-nav ms-auto mb-3 d-md-none">
+        <a class="nav-link position-relative" href="/listing/reels">
+          <i class="fa-brands fa-suse"></i> &nbsp; <b>Vibes</b>
+          <span class="custom-badge ms-2">NEW</span>
+        </a>
+        <a class="nav-link" href="/listing/new"><i class="fa-solid fa-igloo"></i> &nbsp; <b>Airbnb your home</b></a>
+
+        <% if (!currUser) { %>
+          <a class="nav-link" href="/signup"><i class="fa-solid fa-right-to-bracket"></i> &nbsp; Sign Up</a>
+          <a class="nav-link" href="/login"><i class="fa-solid fa-user"></i> &nbsp; Login</a>
+        <% } %>
+
+        <% if (currUser) { %>
+          <a class="nav-link" href="/logout">Log Out</a>
+        <% } %>
+      </div>
+
+      <!-- Vibes and Dropdown on medium/large screens -->
+      <div class="navbar-nav ms-auto mb-3 d-none d-md-flex align-items-center">
+        <div class="p-1">
+          <a style="font-size: large;" class="dropdown-item" href="/listing/reels">
+            <i class="fa-brands fa-suse"></i> &nbsp; <b>Vibes</b>
+          </a>
+        </div>
+        <div class="p-2">|</div>
+        <div class="dropdown">
+          <div class="btn dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user-circle" style="font-size: x-large;"></i>
+          </div>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" href="/listing/new"><i class="fa-solid fa-igloo"></i> &nbsp; <b>Airbnb your home</b></a></li>
+
+            <% if (!currUser) { %>
+              <li><a class="dropdown-item" href="/signup"><i class="fa-solid fa-right-to-bracket"></i> &nbsp; Sign Up</a></li>
+              <li><a class="dropdown-item" href="/login"><i class="fa-solid fa-user"></i> &nbsp; Login</a></li>
+            <% } %>
+
+            <% if (currUser) { %>
+              <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+            <% } %>
+          </ul>
         </div>
       </div>
+
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <script>
 
-  </script>
+<style>
+  .custom-badge {
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    color: white;
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px rgba(255, 110, 196, 0.6);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 5px rgba(255, 110, 196, 0.6);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(120, 115, 245, 0.8);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 5px rgba(255, 110, 196, 0.6);
+    }
+  }
+</style>

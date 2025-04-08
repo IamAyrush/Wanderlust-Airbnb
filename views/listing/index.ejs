@@ -57,7 +57,7 @@
                   <% } %>
                     <div class="card-body">
                       <p class="card-text">
-                        <b><%= listing.title %></b>
+                        <b><%= listing.title.length > 30 ? listing.title.substring(0, 25) + "..." : listing.title %></b>
                           <br>
                           &#8377; <%= listing.price.toLocaleString("en-IN") %> night
                           &nbsp; &nbsp; <i class="tax-info">+18% GST</i>
@@ -68,5 +68,18 @@
             </a>
             <% } %>
     </div>
+
+
+<!-- ------------------------------Js for this Page ------------------------ -->
+  <script>
+      const taxSwitch = document.getElementById('flexSwitchCheckDefault');
+  
+  taxSwitch.addEventListener('change', () => {
+    const taxInfoElements = document.querySelectorAll('.tax-info');
+    taxInfoElements.forEach((element) => {
+      element.style.display = taxSwitch.checked ? 'inline' : 'none';
+    });
+  });
+    </script>
 
     

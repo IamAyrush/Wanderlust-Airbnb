@@ -174,3 +174,48 @@ module.exports.deleteListing =async (req,res)=>{
     req.flash("success","Listing Deleted succesfuly")
     res.redirect("/listing")
 }
+
+
+//-------------------for reel section--------------------
+module.exports.reels = async (req, res) => {
+    try {
+        let { page } = req.query;
+        page = parseInt(page) || 1;
+        const limit = 10; // Number of reels per request
+
+        const listings = await Listing.find().populate("owner").limit(limit * 2);  // Fetch more for variety
+
+        let allImages = [];
+
+        listings.forEach(listing => {
+            if (listing.img && listing.img.length > 0) {
+                listing.img.forEach(image => {
+                    allImages.push({
+                        image: image.url,
+                        listing: {
+                            _id: listing._id,
+                            title: listing.title,
+                            description: listing.description || "",
+                            owner: listing.owner?.username || "Unknown"
+                        }
+                    });
+                });
+                
+            }
+        });
+
+        // Shuffle images to ensure randomness
+        allImages = allImages.sort(() => Math.random() - 0.5).slice(0, limit);
+
+        if (req.xhr) {
+            return res.json(allImages); // Send JSON response for AJAX
+        }
+
+        // Initial page load
+        res.render("listing/reels.ejs", { initialReels: JSON.stringify(allImages) });
+
+    } catch (error) {
+        console.error("Error fetching reels:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+};

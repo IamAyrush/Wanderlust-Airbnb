@@ -42,7 +42,7 @@
     <% for (const listing of filterListing)  { %>
         <a href="/listing/<%= listing._id %>" class="listing-lines">
             <div class="listing-card card col" >
-                <img src="<%= listing.img.url %>" class="card-img-top" alt="..." style="height: 20rem;">
+                <img src="<%= listing.img[0].url %>" class="card-img-top" alt="..." style="height: 20rem;">
                 <div class="card-body">
                   <p class="card-text">
                     <b><%= listing.title %></b>

@@ -53,6 +53,13 @@ for(let i=0;i<=10;i++){
 // this is for search results.
 router.post('/result',  wrapAsync(listingController.result));
 
+//this is for reels section ------ #Vibes-----------------
+router.get('/reels',wrapAsync(listingController.reels));
+
+
+
+
+
 router.post(
     "/:id/upload",
     isLoggedIn,

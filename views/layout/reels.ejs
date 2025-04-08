@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/512/13038/13038213.png?ga=GA1.1.726282403.1726122385">
+    <title>WanderLust - vibes</title>
+    <link rel="stylesheet" href="/css/reels.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand bg-light fixed-bottom border-top" style="height: 50px; font-size: 14px; background-color:black !important;">
+        <div class="container-fluid d-flex justify-content-around" style="color: #fe424d;">
+            <a class="nav-link" href="/">
+                <i class="fa-regular fa-compass" style="font-size: 23px;"></i>
+            </a>
+            <a class="nav-link" href="/listing/reels">
+                <i class="fa-brands fa-suse" style="font-size: 23px;"></i>
+            </a>
+            <a class="nav-link" href="/listing/new">
+                <i class="fa-solid fa-igloo" style="font-size: 23px;"></i>
+            </a>
+            <div class="custom-profile-menu">
+                <button class="profile-btn" onclick="toggleProfileMenu()">
+                    <i class="fa-solid fa-user-circle" style="font-size: 23px;"></i>
+                </button>
+            
+                <div class="profile-dropdown" id="profileDropdown">
+                    <% if (!currUser) { %>
+                        <a class="dropdown-item" href="/signup"><i class="fa-solid fa-right-to-bracket"></i> &nbsp; Sign Up</a>
+                        <a class="dropdown-item" href="/login"><i class="fa-solid fa-user"></i> &nbsp; Login</a>
+                      <% } %>
+          
+                      <% if (currUser) { %>
+                        <a class="dropdown-item" href="/logout"><i class="fa-solid fa-right-to-bracket"></i> &nbsp;Log Out</a>
+                      <% } %>
+                </div>
+            </div>
+            
+            
+        </div>
+    </nav>
+    <div class="container">
+        <%- include("../include/flash.ejs") %>
+        <%- include("../include/loading.ejs") %>
+        <%- body %>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="/js/reel.js"></script>
+    <script src="/js/script.js"></script>
+    
+
+    
+    
+</body>
+</html>

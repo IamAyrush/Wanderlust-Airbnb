@@ -204,6 +204,10 @@ font-size: 2rem;
      display: flex;
      align-items: center;
  }
+ .search-input {
+    border-radius: 25px !important;
+    padding: 5px 2rem 5px 2rem !important;
+}
 
  .filters-slidshow{
      display: flex;
@@ -238,8 +242,7 @@ font-size: 2rem;
     font-size: 1.3rem;
     font-weight: 700;
     margin-left: -12px;
-    margin-right: 20px;
-    
+    margin-right: 20px;  
     
   }
   .explore{

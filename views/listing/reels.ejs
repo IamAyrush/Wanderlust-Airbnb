@@ -1,0 +1,29 @@
+<% layout("/layout/reels") %>
+
+<div class="reel-container" id="reel-container">
+    <% JSON.parse(initialReels).forEach(reel => { %>
+        <div class="reel">
+            <img src="<%= reel.image %>" alt="Reel Image">
+            
+            <div class="controls">
+                <button class="btn-like" onclick="toggleLike(this)">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="btn-share" onclick="sharePost()">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </button>
+            </div>
+            
+            <div class="reel-info">
+                <div class="owner-info">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9M8-ZG_lavnioLwPI-kRAvFvsYDnWMb30zg&s" alt="Owner" class="owner">
+                    <span><%= reel.listing.owner %></span>
+                </div>
+                <p class="description">
+                    <%= reel.listing.description || "No description available." %>
+                </p>
+            </div>
+        </div>
+    <% }); %>
+    <div style="height: 80px; flex-shrink: 0;"></div>
+</div>
