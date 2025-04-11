@@ -119,9 +119,10 @@ app.get("/",(req,res)=>{
 //      res.send("saved")
 // })
 
-app.all("*",(req,res,next)=>{
-    next(new ExpressError(404,"Page Not Found"));
-})
+app.all("*", (req, res) => {
+    res.status(404).render("listing/page404");
+});
+
 
 app.use((err,req,res,next)=>{
     let {status=500 ,message="something went wrong"}=err;
