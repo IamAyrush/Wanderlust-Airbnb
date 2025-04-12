@@ -16,7 +16,7 @@
       <!-- Search Form -->
       <div class="navbar-nav ms-auto mb-3">
         <form class="d-flex" role="search" method="post" action="/listing/result">
-          <input class="form-control me-2 search-input" type="search" placeholder="Search location" name="q" aria-label="Search">
+          <input class="form-control me-2 search-input" type="search" placeholder="Search location" name="q" aria-label="Search" required>
           <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
         </form>
       </div>
@@ -71,31 +71,3 @@
 </nav>
 
 
-<style>
-  .custom-badge {
-    background: linear-gradient(135deg, #ff6ec4, #7873f5);
-    color: white;
-    font-size: 0.6rem;
-    padding: 3px 8px;
-    border-radius: 999px;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 0 5px rgba(255, 110, 196, 0.6);
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 0 5px rgba(255, 110, 196, 0.6);
-    }
-    50% {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(120, 115, 245, 0.8);
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 5px rgba(255, 110, 196, 0.6);
-    }
-  }
-</style>
