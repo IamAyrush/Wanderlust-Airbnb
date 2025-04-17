@@ -1,6 +1,8 @@
-# [Wanderlust Logo](https://cdn-icons-png.freepik.com/512/13038/13038213.png?ga=GA1.1.726282403.1726122385) Wanderlust — Discover Hidden Gems Around the World
+![Wanderlust Logo](https://cdn-icons-png.freepik.com/512/13038/13038213.png)
 
-![Wanderlust Logo](https://img.icons8.com/emoji/96/globe-showing-europe-africa-emoji.png)  
+# 🌍 Wanderlust — Discover Hidden Gems Around the World
+
+![Rotating Earth](https://media.giphy.com/media/Q8xuJ8zUo2rbpLQrZz/giphy.gif) 
 _An Airbnb-inspired full-stack web application for booking unique stays._
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/yourusername/wanderlust)
