@@ -1,4 +1,4 @@
-# 🌍 Wanderlust — Discover Hidden Gems Around the World
+# [Wanderlust Logo](https://cdn-icons-png.freepik.com/512/13038/13038213.png?ga=GA1.1.726282403.1726122385) Wanderlust — Discover Hidden Gems Around the World
 
 ![Wanderlust Logo](https://img.icons8.com/emoji/96/globe-showing-europe-africa-emoji.png)  
 _An Airbnb-inspired full-stack web application for booking unique stays._
@@ -19,16 +19,6 @@ _An Airbnb-inspired full-stack web application for booking unique stays._
 - 💬 **Review System** — Users can leave reviews for properties
 - 💾 **MongoDB Integration** — Store user data, bookings, and listings
 - 🎨 **Beautiful UI** — Powered by Bootstrap, HTML, and CSS
-
----
-
-## 📸 Preview
-
-| Homepage 🏠 | Listings 🏘️ | Property Detail 🧐 |
-|------------|-------------|-------------------|
-| ![home](https://via.placeholder.com/250x150.png?text=Homepage) | ![list](https://via.placeholder.com/250x150.png?text=Listing+Page) | ![detail](https://via.placeholder.com/250x150.png?text=Detail+View) |
-
-> _Note: Replace placeholders with actual screenshots from your project._
 
 ---
 
@@ -61,3 +51,22 @@ Here are some featured properties from Wanderlust:
 ```bash
 git clone https://github.com/yourusername/wanderlust.git
 cd wanderlust
+
+```
+---
+## 📬 Contact
+Made with ❤️ by **Ayush Verma**
+📧 Email: **ayrush01@example.com**
+📸 Instagram: @ayrush.v
+
+---
+
+## ⭐ Show Your Support
+If you found this project useful, please consider giving it a ⭐ on GitHub!
+Your support inspires me to keep building and sharing awesome projects. 💻✨
+
+Let’s make the world a little more wanderlust-y :)
+
+
+
+
