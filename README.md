@@ -1,8 +1,13 @@
-![Wanderlust Logo](https://cdn-icons-png.freepik.com/512/13038/13038213.png)
+<p align="center">
+  <img src="https://cdn-icons-png.freepik.com/512/13038/13038213.png" alt="Wanderlust Logo" width="100" />
+</p>
 
-# 🌍 Wanderlust — Discover Hidden Gems Around the World
+<h1 align="center">🌍 Wanderlust — Discover Hidden Gems Around the World</h1>
 
-![Rotating Earth](https://media.giphy.com/media/Q8xuJ8zUo2rbpLQrZz/giphy.gif) 
+<p align="center">
+  <img src="https://i.pinimg.com/originals/f5/66/1b/f5661b4203008e18acc999bf9ca8c1cd.gif" alt="Rotating Earth" width="120" />
+</p>
+
 _An Airbnb-inspired full-stack web application for booking unique stays._
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/yourusername/wanderlust)
