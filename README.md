@@ -4,8 +4,8 @@
 _An Airbnb-inspired full-stack web application for booking unique stays._
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/IamAyrush/Wanderlust-Airbnb)
-![GitHub stars](https://img.shields.io/github/stars/IamAyrush/Wanderlust-Airbnb))
-![License](https://img.shields.io/github/license/IamAyrush/Wanderlust-Airbnb))
+![GitHub stars](https://img.shields.io/github/stars/IamAyrush/Wanderlust-Airbnb)
+![License](https://img.shields.io/github/license/IamAyrush/Wanderlust-Airbnb)
 ![Made with Love](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)
 
 ---
