@@ -22,16 +22,6 @@ _An Airbnb-inspired full-stack web application for booking unique stays._
 
 ---
 
-## 📸 Preview
-
-| Homepage 🏠 | Listings 🏘️ | Property Detail 🧐 |
-|------------|-------------|-------------------|
-| ![home](https://via.placeholder.com/250x150.png?text=Homepage) | ![list](https://via.placeholder.com/250x150.png?text=Listing+Page) | ![detail](https://via.placeholder.com/250x150.png?text=Detail+View) |
-
-> _Note: Replace placeholders with actual screenshots from your project._
-
----
-
 ## 🏡 Sample Listings
 
 Here are some featured properties from Wanderlust:
@@ -61,3 +51,18 @@ Explore more at [wanderlust-airbnb-gmsk.onrender.com](https://wanderlust-airbnb-
 ```bash
 git clone https://github.com/yourusername/wanderlust.git
 cd wanderlust
+```
+2. **Install dependencies**
+```bash
+npm install
+```
+3. **Upload all api keys and mongoDB URL into .env file**
+4. **Run the app**
+```bash
+node app.js
+```
+
+## 📬 Contact
+Made with ❤️ by Ayush Verma
+📧 Email: ayrush01@example.com
+📸 Instagram: @ayrush.v
